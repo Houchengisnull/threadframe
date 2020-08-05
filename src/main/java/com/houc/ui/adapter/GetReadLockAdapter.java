@@ -17,6 +17,7 @@ public class GetReadLockAdapter extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
         super.mouseClicked(e);
         Thread thread = new Thread(target);
+        thread.setName("reader[" + thread.getId() + "]");
         thread.start();
     }
 }

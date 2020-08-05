@@ -1,8 +1,12 @@
 package com.houc.utils;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * Hc的反射工具类
+ */
 public class Reflections {
 
     /**
@@ -27,4 +31,23 @@ public class Reflections {
         return obj;
     }
 
+    /**
+     * get protected/private/default field
+     */
+    public static <T> T getUnaccessible(Class<?> clazz, String fieldName, Object instance, Class<T> returnType){
+        Field field = null;
+        T obj = null;
+        try {
+            field = clazz.getDeclaredField(fieldName);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+        field.setAccessible(true);
+        try {
+            obj = returnType.cast(field.get(instance));
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return obj;
+    }
 }

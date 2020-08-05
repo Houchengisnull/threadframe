@@ -3,6 +3,7 @@ package com.houc;
 import com.houc.ui.ThreadFrame;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -11,10 +12,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 public class Application {
 
+    public static ApplicationContext context = null;
+
     public static void main(String[] args) {
         System.setProperty("java.awt.headless", "false");
         SpringApplicationBuilder builder = new SpringApplicationBuilder(Application.class);
-        builder.run(args).getBean(ThreadFrame.class).rendering();
+        ApplicationContext applicationContext = builder.run(args);
+        context = applicationContext;
+        context.getBean(ThreadFrame.class).rendering();
     }
 
 }

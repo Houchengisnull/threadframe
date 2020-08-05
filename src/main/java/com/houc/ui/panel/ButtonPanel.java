@@ -17,12 +17,14 @@ public class ButtonPanel extends DefaultPanel {
     @Autowired
     GetReadLockAdapter getReadLockAdapter;
 
-    public void rendering() {
+    @Override
+    public void init() {
         setLayout(new FlowLayout(FlowLayout.CENTER, 0, 10));
-        setBackground(Color.WHITE);
         setPreferredSize(new Dimension(200, getParent().getHeight()));
+
         JLabel writeButton = new JLabel("write", JLabel.CENTER);
         writeButton.setBackground(color);
+        writeButton.setForeground(Color.WHITE);
         writeButton.setOpaque(true);
         writeButton.setPreferredSize(new Dimension(lineWidth, lineHeight));
         writeButton.addMouseListener(getWriteLockAdapter);
@@ -30,11 +32,10 @@ public class ButtonPanel extends DefaultPanel {
 
         JLabel readButton = new JLabel("read", JLabel.CENTER);
         readButton.setOpaque(true);
+        readButton.setForeground(Color.WHITE);
         readButton.setBackground(color);
         readButton.setPreferredSize(new Dimension(lineWidth, lineHeight));
         readButton.addMouseListener(getReadLockAdapter);
         add(readButton);
-
     }
-
 }

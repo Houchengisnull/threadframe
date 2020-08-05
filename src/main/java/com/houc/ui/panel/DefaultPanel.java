@@ -10,6 +10,15 @@ public abstract class DefaultPanel extends JPanel {
     static Color color = new Color(205, 85,  85);
     static Border border = BorderFactory.createLineBorder(color);
 
-    public abstract void rendering();
+    boolean isInit = false;
+
+    public void rendering(){
+        setBackground(Color.WHITE);
+        if (!isInit) {
+            init();
+        }
+    }
+
+    protected abstract void init();
 
 }

@@ -17,6 +17,7 @@ public class GetWriteLockAdapter extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
         super.mouseClicked(e);
         Thread thread = new Thread(target);
+        thread.setName("writer[" + thread.getId() + "]");
         thread.start();
     }
 }
