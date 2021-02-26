@@ -24,7 +24,7 @@
     </top>-->
     <left>
         <ListView fx:id="sidebar" styleClass="sidebar">
-            <Label text="click" onMouseClicked="#click"/>
+            <!--<Label text="click" onMouseClicked="#click"/>-->
         </ListView>
     </left>
     <!--<center>
