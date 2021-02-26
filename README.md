@@ -1,28 +1,17 @@
 [toc]
 
-# threadframe
+# 更新
 
-读写锁演示工具
+- **2021-1-27**
 
-![threadframe](img/threadframe.png)
+  使用`javafx`重写界面。
+  
+- **2021-1-28**
 
-## Left
+  总结`错误: 缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序`问题。
 
-- <button>write</button>
+# 环境
 
-  创建一个写线程
-
-- <button>read</button>
-
-  创建一个读线程
-
-## Center
-
-显示已获取锁资源在运行中的线程
-
-点击相应线程释放锁资源
-
-## Right
-
-等待锁资源的线程
-
+- **JDK 15.0.2**
+- **JavaFX 13**
+- **Maven 3.6.3**

@@ -1,0 +1,23 @@
+.toolbar {
+    -fx-background-color: #8fbc8f;
+}
+
+.status {
+}
+
+.content {
+    -fx-background-color: yellow;
+}
+
+.sidebar {
+    /*-fx-pref-width: 100px;
+    -fx-pref-height: 100%;*/
+}
+
+.sidebar Label {
+    -fx-min-width: 100px;
+    -fx-alignment: center;
+    -fx-background-color: #CCFF99;
+}
+.right {
+}
