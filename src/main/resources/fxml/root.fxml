@@ -18,10 +18,10 @@
     <stylesheets>
         <URL value="@../style/frame.css" />
     </stylesheets>
-    <!--<left>
+    <left>
         <ListView fx:id="sidebar" styleClass="sidebar">
         </ListView>
-    </left>-->
+    </left>
     <!-- 控制台 -->
     <bottom>
         <VBox styleClass="console">
