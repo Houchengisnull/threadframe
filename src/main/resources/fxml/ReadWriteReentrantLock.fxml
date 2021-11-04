@@ -7,12 +7,38 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.skin.TableHeaderRow?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-            <!--fx:controller="com.houc.controller.ReadWriteReentrantLockController"-->
-      style="-fx-background-color: #8fbc8f">
-
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.houc.controller.ReadWriteReentrantLockController"
+            style="-fx-background-color: #8fbc8f">
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10px">
+            <Button onAction="#addWriteTask">Add Write Task</Button>
+            <Button onAction="#addReadTask">Add Read Task</Button>
+        </HBox>
+    </top>
     <center>
-        <Text>Hello world</Text>
+        <HBox>
+           <TableView fx:id="execute" prefWidth="100">
+           <columns>
+               <TableColumn text="执行" >
+                   <cellValueFactory>
+                       <PropertyValueFactory property="taskName"/>
+                   </cellValueFactory>
+               </TableColumn>
+           </columns>
+           </TableView>
+            <TableView fx:id="wait" prefWidth="100">
+                <columns>
+                   <TableColumn text="等待队列" >
+                       <cellValueFactory><PropertyValueFactory property="taskName"/>
+                       </cellValueFactory>
+                   </TableColumn>
+               </columns>
+           </TableView>
+        </HBox>
     </center>
 </BorderPane>

@@ -9,6 +9,7 @@
 
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
+<?import javafx.scene.text.TextFlow?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.houc.controller.RootController"
@@ -17,22 +18,17 @@
     <stylesheets>
         <URL value="@../style/frame.css" />
     </stylesheets>
-    <!--<top>
-        <HBox styleClass="toolbar">
-            <Label text="Top"/>
-        </HBox>
-    </top>-->
-    <left>
+    <!--<left>
         <ListView fx:id="sidebar" styleClass="sidebar">
-            <!--<Label text="click" onMouseClicked="#click"/>-->
         </ListView>
-    </left>
-    <!--<center>
-        <fx:include fx:id="center"  source="helloworld.fxml"/>
-    </center>-->
-    <!--<bottom>
-        <HBox styleClass="status">
-            <Label text="Bottom"/>
-        </HBox>
-    </bottom>-->
+    </left>-->
+    <!-- 控制台 -->
+    <bottom>
+        <VBox styleClass="console">
+            <!--<TextFlow fx:id="console_title">
+                <Label>控制台</Label>
+            </TextFlow>-->
+            <TextArea fx:id="console" prefHeight="200" style="-fx-control-inner-background: white">Console区域</TextArea>
+        </VBox>
+    </bottom>
 </BorderPane>

@@ -2,11 +2,25 @@
     -fx-background-color: #8fbc8f;
 }
 
-.status {
+.console {
+   -fx-background-color: #D3D3D3;
+    -fx-min-height: 200px;
+    /*-fx-border-color: gray;*/
 }
 
-.content {
-    -fx-background-color: yellow;
+/*.console #console_title {
+    -fx-background-color: #808080;
+    -fx-alignment: center;
+}*/
+
+.console #console {
+    -fx-background-color: #808080;
+    -fx-control-inner-background: white;
+}
+
+.content #console_content {
+    -fx-background-color: white;
+    -fx-wrap-text: true;
 }
 
 .sidebar {
@@ -15,7 +29,7 @@
 }
 
 .sidebar Label {
-    -fx-min-width: 100px;
+    /*-fx-min-width: 100px;*/
     -fx-alignment: center;
     -fx-background-color: #CCFF99;
 }
